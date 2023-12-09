@@ -1,20 +1,26 @@
-import { createReducer } from "@reduxjs/toolkit";
+import {createReducer, createAction} from '@reduxjs/toolkit'
+
+const dr = createAction('dataRequest')
+const ds = createAction('dataSuccess')
+const df = createAction('dataFailure')
+const initial = {};
 
 export const dataSlice = createReducer(
-  {},
+  initial, (builder) => 
   {
-    dataRequest: (state) => {
+    builder
+    .addCase(dr, (state) => {
       state.loading = true;
-    },
-    dataSuccess: (state, action) => {
+    })
+    .addCase(ds, (state,action) => {
       state.loading = false;
       state.tickets = action.payload.tickets;
       state.users = action.payload.users;
-    },
-    dataFailure: (state) => {
+    })
+    .addCase(df, (state) => {
       state.loading = false;
       state.tickets = [];
       state.users = [];
-    },
+    })
   }
 );

@@ -1,6 +1,7 @@
 import React from "react";
 import { BsExclamationSquareFill } from "react-icons/bs";
 import "./Card.css";
+import userimg from  "../assets/user.png"
 
 const Card = ({ id, title, tags, status }) => {
   return (
@@ -12,8 +13,8 @@ const Card = ({ id, title, tags, status }) => {
 
         <div className="image">
           <img
-            src="https://quicksell.co/assets/logo/logo.png"
-            alt="QuickSell"
+            src={userimg}
+            alt="userimage"
           />
 
           <div className="status"></div>

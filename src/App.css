@@ -1,4 +1,11 @@
-.App {
-  text-align: center;
-  background-color: gray;
+* {
+  margin: 0;
+  padding: 0;
+  block-size: border-box;
+  background-color: whitesmoke;
+  /* overflow-x: hidden; */
+}
+.App
+{
+  overflow-x: hidden;
 }

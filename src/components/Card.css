@@ -6,7 +6,7 @@
     border: 1px solid silver;
     background-color: whitesmoke;
     border-radius: 10px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(92, 83, 83, 0.203) 0px 7px 25px 0px;
 }
 
 .cardHeading2 {
@@ -37,7 +37,7 @@ img {
     bottom: 0;
     width: 10px;
     height: 10px;
-    background: silver;
+    background: whitesmoke;
     border-radius: 50%;
 }
 

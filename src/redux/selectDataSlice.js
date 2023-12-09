@@ -1,21 +1,27 @@
-import { createReducer } from "@reduxjs/toolkit";
+import { createReducer, createAction} from "@reduxjs/toolkit";
+
+const dsr = createAction('dataSelectRequest')
+const dss = createAction('dataSelectSuccess')
+const dsf = createAction('dataSelectFailure')
+const initial = {};
 
 export const dataSelectSlice = createReducer(
-  {},
+  initial, (builder) => 
   {
-    dataSelectRequest: (state) => {
+    builder
+    .addCase(dsr, (state) => {
       state.loading = true;
       state.dataSelected = [];
-    },
-    dataSelectSuccess: (state, action) => {
+    })
+    .addCase(dss, (state,action) => {
       state.loading = false;
       state.dataSelected = action.payload.dataSelected;
       state.user = action.payload.user;
-    },
-    dataSelectFailure: (state, action) => {
+    })
+    .addCase(dsf, (state, action) => {
       state.loading = false;
       state.dataSelected = [];
       state.message = action.payload.message;
-    },
+    })
   }
 );
